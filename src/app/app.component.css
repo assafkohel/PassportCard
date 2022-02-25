@@ -1,0 +1,26 @@
+.card {
+    max-width: 400px;
+    margin-bottom: 8px;
+
+  }
+
+.cards{
+width: 40%;
+}
+
+.leftSection{
+  width: 40%;
+  border-right: 1px solid grey;
+  float: left;
+}
+
+.rightUpDiv{
+  width: 59%;
+  border-bottom: 1px solid grey;
+  float:right;
+}
+
+.rightDownDiv{
+  width: 59%;
+  float:right;
+}
