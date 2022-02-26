@@ -1,0 +1,21 @@
+<h1>User Details:</h1>
+<div *ngIf="user">
+    <h1>Name: {{user.name}}</h1>
+    <h1>User Name: {{user.username}}</h1>
+    <h1>Phone: {{user.phone}}</h1>
+    <h1>Email: {{user.email}}</h1>
+
+    <h1>Company Details:</h1>
+    <p>Company Name: {{user.company.name}}</p>
+    <p>Company Description: {{user.company.catchPhrase}}</p>
+    <p>BS: {{user.company.bs}}</p> 
+
+    <h1>Address Details:</h1>
+    <p>Street: {{user.address.street}}</p>
+    <p>Suite: {{user.address.suite}}</p>
+    <p>City: {{user.address.city}}</p>
+    <p>Zipcode: {{user.address.zipcode}}</p>
+    <p>Geo Lat: {{user.address.geo_lat}}</p>
+    <p>Geo Lon: {{user.address.geo_lon}}</p>
+</div>
+

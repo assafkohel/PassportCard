@@ -2,7 +2,9 @@
 <div class="mainContainer">
   <div class="leftSection">
     <mat-list role="list" class="cards" *ngFor="let card of cards">
-      <mat-card class="card">
+      <mat-card class="card" (click)="OnSelectedCardEvent($event,card)"
+      [style.background-color]=
+       "card.isSelected? (isSelectedCard_numberOfPosts_LessThanTen ? 'pink': 'lightblue') : 'white'">
         <mat-card-title-group>
           <mat-card-title>{{card.name}}</mat-card-title>
         </mat-card-title-group>
@@ -19,11 +21,21 @@
     </mat-list>
   </div>
 
-  <div class="rightUpDiv">
+  <div class="rightUpDiv" *ngIf="selectedUser">
   <h1>User {{selectedUser.name}}</h1>
+  </div>
+  <div class="rightUpDiv" *ngIf="!selectedUser">
+    <h1>No Selected User</h1>
   </div>
 
   <div class="rightDownDiv">
+    <nav mat-tab-nav-bar class="tabGroup">
+      <a mat-tab-link *ngFor="let tabItem of tabs" [routerLink]="tabItem.route"
+        routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">
+        <span>{{tabItem.label}}</span>
+      </a>
+
+    </nav>
     <router-outlet></router-outlet>
   </div>
 </div>

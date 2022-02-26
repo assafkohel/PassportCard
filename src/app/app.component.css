@@ -1,11 +1,11 @@
 .card {
     max-width: 400px;
     margin-bottom: 8px;
-
+    cursor: pointer;
   }
 
 .cards{
-width: 40%;
+width: 60%;
 }
 
 .leftSection{

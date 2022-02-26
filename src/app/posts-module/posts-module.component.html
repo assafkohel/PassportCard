@@ -1,0 +1,36 @@
+
+<div class="mainPostsContainer">
+    
+    <div>
+        <mat-form-field class="example-form-field" appearance="fill">
+            <mat-label>Search Posts Title
+                <mat-icon style="padding-left: 20px;" aria-hidden="false" aria-label="Search">search</mat-icon>
+            </mat-label>
+            <input matInput #myInput placeholder="Post Title..." [(ngModel)]="value" (input)="FilterItem(myInput.value)">
+            <button *ngIf="true" matSuffix mat-icon-button aria-label="Clear" >
+            </button>
+        </mat-form-field>
+    </div>
+    <div class="postContent">
+        <mat-list role="list" *ngFor="let item of filteredItems" >
+        
+            <mat-list-item role="listitem" class="itemsList" >
+                <div class="itemBox">
+                    <div class="postTitle">
+                        <h2>{{item.title}}</h2>
+                        <span>{{item.body}}</span>
+                    </div>
+                    <div class="postDelete">
+                        <button mat-raised-button color="primary" (click)="OnDeletePost(item)">
+                            Delete
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </mat-list-item>
+        
+
+        </mat-list>
+    </div>
+   
+</div>
